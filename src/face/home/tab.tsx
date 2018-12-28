@@ -25,7 +25,7 @@ const aContent = () => {
             <div>{id} {discription} </div>
             <div className="d-flex">
                 <div className="flex-grow-1"><span className="text-danger font-weight-bold">{price}</span> <small>元</small></div>
-                <div><button className="btn btn-button btn-danger btn-outline">加购物车</button></div>
+                <div><button className="btn btn-outline-danger btn-sm">加购物车</button></div>
             </div>
         </div>
     }
@@ -40,8 +40,8 @@ const aContent = () => {
     }
 
     return <div>
-        <div className="d-flex p-2">
-            <div className="" onClick={()=>nav.push(<Page header="百灵威公司介绍">
+        <div className="d-flex p-2 align-items-center">
+            <div className="mr-2" onClick={()=>nav.push(<Page header="百灵威公司介绍">
                 <div className="text-center cursor-pointer">
                     {[1,2,3,4,5,6].map(v => <div key={v}>
                         <img src={logo} className="App-logo" alt="logo" />

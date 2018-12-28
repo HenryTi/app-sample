@@ -1,20 +1,22 @@
 import * as React from 'react';
-import { CJkOrderApp } from './CJkOrderApp';
 import { CUsq, TuidMain } from 'tonva-react-usql';
 import { observable } from 'mobx';
 import { observer } from 'mobx-react';
 import { List } from 'tonva-react-form';
 import { Loading } from 'tonva-tools';
+import { CApp } from 'ui-usql';
+
+const tonvaApp = 'JKDev/jkOrder';
 
 export class TabController {
-    private cApp: CJkOrderApp;
+    private cApp: CApp;
     private cUsq: CUsq;
     private tuidProduct: TuidMain;
 
     @observable private items:any[];
 
     async start() {
-        this.cApp = new CJkOrderApp();
+        this.cApp = new CApp(tonvaApp);
         await this.cApp.load();
         this.cUsq = this.cApp.getCUsq('JKDev/jkOrder');
         this.tuidProduct = this.cUsq.tuid('product');
@@ -26,7 +28,6 @@ export class TabController {
         let {id, discription} = row;
         return <div>{id}: {discription}</div>;
     }
-
 
     private renderContent = () => {
         return <div>product loaded
