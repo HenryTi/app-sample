@@ -4,7 +4,7 @@ import { observable } from 'mobx';
 import { observer } from 'mobx-react';
 import { List } from 'tonva-react-form';
 import { Loading } from 'tonva-tools';
-import { CApp } from 'ui-usql';
+import { CApp } from 'tonva-react-usql';
 
 const tonvaApp = 'JKDev/jkOrder';
 
